@@ -28,6 +28,16 @@ MindfulScroll is designed to combat infinite scrolling and promote mindful inter
 - **Custom Site Management** - Add or remove sites from the block list
 - **Non-Intrusive Display** - Compact timer overlay that doesn't block content
 
+## 📸 Screenshots
+
+### 🔒 Overlay (SYSTEM LOCKDOWN)
+
+![Overlay Screenshot](assets/overlay.png)
+
+### 🧭 Popup Dashboard
+
+![Popup Screenshot](assets/popup.png)
+
 ## 🚀 Installation
 
 ### From Source
