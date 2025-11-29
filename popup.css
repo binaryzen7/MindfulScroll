@@ -1,0 +1,264 @@
+/* MindfulScroll - Hacker Aesthetic Popup Styles */
+
+:root {
+  --bg-primary: #000000;
+  --text-primary: #00ff41; /* Matrix green */
+  --text-secondary: #888888;
+  --border-color: #333333;
+  --font-mono: 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 340px;
+  min-height: 400px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+}
+
+.terminal-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Header */
+.terminal-header h1 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 16px;
+  margin-bottom: 8px;
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Sections */
+.section-title {
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* Site List */
+.site-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.site-item {
+  display: flex;
+  align-items: center;
+}
+
+.terminal-checkbox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  user-select: none;
+}
+
+.terminal-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-visual {
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.terminal-checkbox input ~ .checkbox-visual::before {
+  content: "[ ]";
+  color: var(--text-secondary);
+}
+
+.terminal-checkbox input:checked ~ .checkbox-visual::before {
+  content: "[X]";
+  color: var(--text-primary);
+}
+
+.site-name {
+  color: var(--text-primary);
+}
+
+.terminal-checkbox:hover .site-name {
+  text-decoration: underline;
+}
+
+/* Inputs */
+.terminal-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prompt {
+  color: var(--text-primary);
+}
+
+#new-site,
+#warning-delay {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  padding: 4px 0;
+  flex: 1;
+  outline: none;
+  width: 60px;
+}
+
+#new-site:focus,
+#warning-delay:focus {
+  border-bottom-color: var(--text-primary);
+}
+
+#new-site::placeholder,
+#warning-delay::placeholder {
+  color: #333;
+  font-style: italic;
+}
+
+.input-label {
+  color: var(--text-secondary);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.section-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* Buttons */
+button {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Add Button specific */
+#add-site-btn {
+  font-size: 12px;
+}
+
+/* Save Button */
+.terminal-footer {
+  margin-top: auto;
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border-color);
+}
+
+#save-btn {
+  width: 100%;
+  padding: 12px;
+  font-weight: 700;
+  border: 1px solid var(--text-primary);
+}
+
+/* Remove Button for Custom Sites */
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: #ff0040;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 2px 6px;
+  margin-left: auto;
+}
+
+.remove-btn:hover {
+  color: #ffffff;
+}
+
+/* Flash Animation */
+@keyframes flash {
+  0% { background-color: transparent; color: var(--text-primary); }
+  10% { background-color: #ffffff; color: #000000; border-color: #ffffff; }
+  100% { background-color: transparent; color: var(--text-primary); }
+}
+
+.flash {
+  animation: flash 0.3s ease-out;
+}
+
+/* Timer Info Section */
+.timer-info {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.timer-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.timer-info-row:last-child {
+  margin-bottom: 0;
+}
+
+.timer-info-label {
+  color: var(--text-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.timer-info-value {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}

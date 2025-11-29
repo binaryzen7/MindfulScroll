@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindfulScroll Settings</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="terminal-container">
+    <header class="terminal-header">
+      <h1>[MINDFULSCROLL]<span class="cursor">_</span></h1>
+    </header>
+    
+    <section class="terminal-section" id="timer-section" style="display: none;">
+      <div class="section-title">> STATUS:</div>
+      <div class="timer-info">
+        <div class="timer-info-row">
+          <span class="timer-info-label">Time on site:</span>
+          <span class="timer-info-value" id="time-spent">0:00</span>
+        </div>
+        <div class="timer-info-row">
+          <span class="timer-info-label">Time to overlay:</span>
+          <span class="timer-info-value" id="time-until">0:00</span>
+        </div>
+      </div>
+    </section>
+    
+    <section class="terminal-section">
+      <div class="section-title">> TARGET_PROTOCOLS:</div>
+      <ul id="site-list" class="site-list">
+        <li class="site-item">
+          <label class="terminal-checkbox">
+            <input type="checkbox" id="site-instagram" checked>
+            <span class="checkbox-visual"></span>
+            <span class="site-name">Instagram</span>
+          </label>
+        </li>
+        <li class="site-item">
+          <label class="terminal-checkbox">
+            <input type="checkbox" id="site-twitter" checked>
+            <span class="checkbox-visual"></span>
+            <span class="site-name">Twitter</span>
+          </label>
+        </li>
+        <li class="site-item">
+          <label class="terminal-checkbox">
+            <input type="checkbox" id="site-x" checked>
+            <span class="checkbox-visual"></span>
+            <span class="site-name">X.com</span>
+          </label>
+        </li>
+        <li class="site-item">
+          <label class="terminal-checkbox">
+            <input type="checkbox" id="site-youtube" checked>
+            <span class="checkbox-visual"></span>
+            <span class="site-name">YouTube</span>
+          </label>
+        </li>
+        <li class="site-item">
+          <label class="terminal-checkbox">
+            <input type="checkbox" id="site-facebook" checked>
+            <span class="checkbox-visual"></span>
+            <span class="site-name">Facebook</span>
+          </label>
+        </li>
+      </ul>
+    </section>
+
+    <section class="terminal-section">
+      <div class="section-title">> ADD_CUSTOM_TARGET:</div>
+      <div class="terminal-input-row">
+        <span class="prompt">></span>
+        <input type="text" id="new-site" placeholder="domain.com" autocomplete="off" />
+        <button id="add-site-btn">[ADD]</button>
+      </div>
+    </section>
+
+    <section class="terminal-section">
+      <div class="section-title">> WARNING_DELAY:</div>
+      <div class="terminal-input-row">
+        <span class="prompt">></span>
+        <input type="number" id="warning-delay" min="1" max="60" value="10" placeholder="Seconds" />
+        <span class="input-label">seconds</span>
+      </div>
+      <p class="section-desc">Time before overlay appears (default: 10s for testing)</p>
+    </section>
+
+    <div class="terminal-footer">
+      <button id="save-btn">[SAVE SYSTEM]</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
